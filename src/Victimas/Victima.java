@@ -6,26 +6,24 @@ package Victimas;
 
 import java.time.LocalDate;
 import java.time.Period;
+import Personas.Persona;
 /**
  *
  * @author Student
  */
-public class Victima {
-    private String Cedula;
-    private String Nombre;
+public class Victima extends Persona {
+    private int Cedula;
     private LocalDate FechaNacimiento;
     public static final String MASCULINO="M", FEMENINO="F";
     private String genero;
-    private String Correo;
-    private String Telefono;
     private String Direccion;
 
-    public String getCedula() {
+    public int getCedula() {
         return Cedula;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public int getNombre() {
+        return Nombre.hashCode();
     }
 
     public LocalDate getFechaNacimiento() {
@@ -36,29 +34,26 @@ public class Victima {
         return genero;
     }
 
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
-    }
-
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
-
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
     }
 
-    public Victima(String Cedula, String Nombre, LocalDate FechaNacimiento, String genero, String Correo, String Telefono, String Direccion) {
-        this.Cedula = Cedula;
+    public Victima(String Cedula, LocalDate FechaNacimiento, String genero, String Direccion, String Nombre, String Correo, String Telefono) {
+        super(Nombre, Correo, Telefono);
+        this.Cedula = Cedula.hashCode();
         this.Nombre = Nombre;
         this.FechaNacimiento = FechaNacimiento;
         this.genero = genero;
-        this.Correo = Correo;
-        this.Telefono = Telefono;
         this.Direccion = Direccion;
     }
-    
+
     public int CalcularEdad(LocalDate FechaNacimiento){
         return Period.between(FechaNacimiento, LocalDate.now()).getYears();
     }
+
+    @Override
+    public String toString() {
+        return "Victima{" + "Cedula=" + Cedula + ", FechaNacimiento=" + FechaNacimiento + ", genero=" + genero + ", Direccion=" + Direccion + '}';
+    }
+    
 }
