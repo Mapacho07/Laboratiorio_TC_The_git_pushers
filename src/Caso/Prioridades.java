@@ -8,6 +8,24 @@ package Caso;
  *
  * @author Student
  */
-public class Prioridades {
-    
+public enum Prioridades {
+    ALTA("Alta"),
+    MEDIA("Media"),
+    BAJA("Baja");
+
+    private final String prioridad;
+
+    Prioridades(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    @Override
+    public String toString() {
+        return "Prioridades{" + "prioridad=" + prioridad + '}';
+    }
+
 }
