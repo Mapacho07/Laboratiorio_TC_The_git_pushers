@@ -26,6 +26,11 @@ public class Persona {
         this.Correo = Correo;
         this.Telefono = Telefono;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "Nombre=" + Nombre + ", Correo=" + Correo + ", Telefono=" + Telefono + '}';
+    }
     
     
 }
