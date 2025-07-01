@@ -5,6 +5,7 @@
 package Caso;
 
 import java.time.LocalDate;
+import Victimas.Victima;
 
 /**
  *
@@ -17,13 +18,14 @@ public class Casos {
     private Prioridades prioridad;
     private LocalDate fecha;
     private String tipo;
-
-    public Casos(String id, String descripcion, Prioridades prioridad, LocalDate fecha, String tipo) {
+    private Victima Victima;
+    public Casos(String id, String descripcion, Prioridades prioridad, LocalDate fecha, String tipo,Victima Victima) {
         this.id = id;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
         this.tipo = tipo;
         this.fecha = fecha;
+        this.Victima = Victima;
     }
 
     public String getId() {
@@ -44,6 +46,10 @@ public class Casos {
 
     public LocalDate getFecha() {
         return fecha;
+    }
+
+    public Victima getVictima() {
+        return Victima;
     }
 
 }
