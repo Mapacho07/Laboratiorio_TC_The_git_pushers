@@ -4,15 +4,13 @@
  */
 package Trabajador_social;
 
+import Personas.Persona;
 /**
  *
  * @author Student
  */
-public class Trabajador_social {
-     private String Cedula;
-    private String Nombre;
-    private String Correo;
-    private String Telefono;
+public class Trabajador_social extends Persona {
+    private String Cedula;
     private String Canton;
 
     public String getCedula() {
@@ -35,21 +33,13 @@ public class Trabajador_social {
         return Canton;
     }
 
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
-    }
-
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
-
-    public Trabajador_social(String Cedula, String Nombre, String Correo, String Telefono, String Canton) {
-        this.Cedula = Cedula;
-        this.Nombre = Nombre;
-        this.Correo = Correo;
-        this.Telefono = Telefono;
+    public Trabajador_social(String Canton, String Cedula, String Nombre, String Correo, String Telefono) {
+        super(Nombre, Correo, Telefono);
+        this.Cedula= Cedula;
         this.Canton = Canton;
     }
+
+    
 
     @Override
     public String toString() {
